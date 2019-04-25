@@ -17,10 +17,13 @@
 #ifndef CV_REGULAR_TRIANGULATION_CELL_BASE_WITH_ID_AND_WCC_3_H
 #define CV_REGULAR_TRIANGULATION_CELL_BASE_WITH_ID_AND_WCC_3_H
 
+#include <CGAL/license/Triangulation_3.h>
+
 #include <CGAL/basic.h>
-#include <CGAL/Triangulation_ds_cell_base_3.h>
-#include <CGAL/Triangulation_vertex_base_3.h>
-#include <CGAL/constructions/constructions_on_weighted_points_cartesian_3.h>
+#include <CGAL/triangulation_assertions.h>
+#include <CGAL/Regular_triangulation_cell_base_3.h>
+
+#include <CGAL/constructions/kernel_ftC3.h>
 
 namespace CGAL {
 
@@ -30,8 +33,7 @@ namespace CGAL {
 //          CGAL/Triangulation_cell_base_with_circumcenter_3.h,
 //          CGAL/Regular_triangulation_cell_base_3.h
 
-template < typename GT,
-           typename Cb = Triangulation_cell_base_3<GT> >
+template < typename GT, typename Cb = Regular_triangulation_cell_base_3<GT> >
 class Regular_triangulation_cell_base_with_id_and_wcc_3
   : public Cb
 {

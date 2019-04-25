@@ -15,7 +15,6 @@
 
 #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
 #include <CGAL/Regular_triangulation_3.h>
-#include <CGAL/Regular_triangulation_euclidean_traits_3.h>
 #include <CGAL/Periodic_3_triangulation_traits_3.h>
 #include <CGAL/Periodic_3_offset_3.h>
 #include <CGAL/Random.h>
@@ -44,22 +43,22 @@
 #include "config_file.h"
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
-typedef CGAL::Regular_triangulation_euclidean_traits_3<K>   Traits;
 
 typedef CGAL::Periodic_3_offset_3                           Offset;
 typedef struct { int atom_id;  Offset off; }                Point_info;
-typedef Traits::RT                                          Weight;
-typedef Traits::Bare_point                                  Point;
-typedef Traits::Weighted_point                              Weighted_point;
+typedef K::FT                                               Weight;
+typedef K::Point_3                                          Point;
+typedef K::Weighted_point_3                                 Weighted_point;
 typedef std::pair<Weighted_point, Point_info>               Weighted_point_with_info;
 typedef std::vector<Weighted_point_with_info>               Wpi_container;
 
-typedef CGAL::Triangulation_vertex_base_with_info_3<Point_info, Traits> Vb;
-typedef CGAL::Regular_triangulation_cell_base_with_id_and_wcc_3<Traits> Cb;  // no hidden points, int id, cached weighted circumcenter
+typedef CGAL::Regular_triangulation_vertex_base_3<K>                    Vb0;
+typedef CGAL::Triangulation_vertex_base_with_info_3<Point_info, K, Vb0> Vb;
+typedef CGAL::Regular_triangulation_cell_base_with_id_and_wcc_3<K>      Cb;  // no hidden points, int id, cached weighted circumcenter
 typedef CGAL::Triangulation_data_structure_3<Vb, Cb>        Tds;
-typedef CGAL::Regular_triangulation_3<Traits, Tds>          Rt;
+typedef CGAL::Regular_triangulation_3<K, Tds>               Rt;
 
-typedef CGAL::Periodic_3_triangulation_traits_3<Traits>     PTraits;  // used for offset -> points construction
+typedef CGAL::Periodic_3_triangulation_traits_3<K>          PTraits;  // used for offset -> points construction
 typedef PTraits::Iso_cuboid_3                               Iso_cuboid;
 
 typedef Rt::Finite_cells_iterator                           Finite_cells_iterator;
@@ -127,10 +126,10 @@ inline std::ostream &operator<<(std::ostream &os, const Point_info &inf)
 // volume, and surface areas of void space in monodisperse and polydisperse sphere packings", Phys. Rev. E, V.56, N5, p. 5524, 1997. doi:10.1103/PhysRevE.56.5524
 double cell_void_volume(Cell_handle c, double &out_surf, Array_double_4 &out_atom_surf)
 {
-    const Point *pts[4] = { &(c->vertex(0)->point()),
-                            &(c->vertex(1)->point()),
-                            &(c->vertex(2)->point()),
-                            &(c->vertex(3)->point()) };
+    const Point *pts[4] = { &((c->vertex(0)->point()).point()),
+                            &((c->vertex(1)->point()).point()),
+                            &((c->vertex(2)->point()).point()),
+                            &((c->vertex(3)->point()).point()) };
     const Point &V = c->weighted_circumcenter().point();   // Voronoi vertex V
 
     double volume = 0.0, surface = 0.0;
@@ -150,7 +149,8 @@ double cell_void_volume(Cell_handle c, double &out_surf, Array_double_4 &out_ato
 
         for (int j = 0; j < 3; j++) {                      // iteration over facet edges
             const int e[2] = { a[(j+1)%3], a[(j+2)%3] };   // indices of two edge atoms
-            const Weighted_point A[2] = { c->vertex(e[0])->point(), c->vertex(e[1])->point() };
+            const Weighted_point WA[2] = { c->vertex(e[0])->point(), c->vertex(e[1])->point() };
+            const Point A[2] = { WA[0].point(), WA[1].point() };
             const CGAL::Sign sE = coplanar_orientation(A[0], A[1], *pts[a[j]], E);
 
             const Point B = K::Line_3(A[0], A[1]).projection(E);  // projection of E to edge
@@ -161,7 +161,7 @@ double cell_void_volume(Cell_handle c, double &out_surf, Array_double_4 &out_ato
                 CGAL::Sign sF = sV * sE * sB;                                // final subsimplex sign
                 double x0 = sqrt((B-A[k]).squared_length());
                 double area;
-                volume += sF * subsimplex_void_volume(x0, y0, z0, A[k].weight(), &area);  // sum signed volume contribution from subsimplexes
+                volume += sF * subsimplex_void_volume(x0, y0, z0, WA[k].weight(), &area);  // sum signed volume contribution from subsimplexes
                 surface += sF * area;
                 per_atom_surface[e[k]] += sF * area;
             }
@@ -256,10 +256,10 @@ bool periodic_regular_triangulation_voids(const Wpi_container& points, Voids_res
                 const Weighted_point &p3 = c1->vertex((i+3)&3)->point();
                 const Point &wcc1 = c1->weighted_circumcenter().point();
                 const Point &wcc2 = c2->weighted_circumcenter().point();
-                bool on_same_side = (orientation(p1, p2, p3, wcc1) ==  // do both ends lie on the same side
-                                     orientation(p1, p2, p3, wcc2));   // of corresponding cell facet?
+                bool on_same_side = (orientation(p1.point(), p2.point(), p3.point(), wcc1) ==  // do both ends lie on the same side
+                                     orientation(p1.point(), p2.point(), p3.point(), wcc2));   // of corresponding cell facet?
 
-                typename Traits::Compute_squared_radius_smallest_orthogonal_sphere_3 r_mouth;  // facet bottleneck squared radius
+                typename K::Compute_squared_radius_smallest_orthogonal_sphere_3 r_mouth;  // facet bottleneck squared radius
                 if ((v2 > v1) && (on_same_side || r_mouth(p1, p2, p3) > 0))
                     add_edge(v1, v2, G);  // use ordering v2>v1 to rule out parallel edges
             }
@@ -312,7 +312,8 @@ int build_pbc_thickened_input(const CavConfig::Atoms_container &in_atoms, const 
 {
     int num_pbc_corrected = 0;
     Iso_cuboid domain(0, 0, 0, box[0], box[1], box[2]);
-    PTraits::Construct_point_3 periodic_point_construct(domain);
+    PTraits ptraits = PTraits(domain);
+    PTraits::Construct_point_3 periodic_point_construct = ptraits.construct_point_3_object();
 
     for (size_t atom_id = 0; atom_id < in_atoms.size(); atom_id++) {
         bool pbc_corrected = false;
