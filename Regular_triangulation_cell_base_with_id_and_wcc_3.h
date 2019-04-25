@@ -45,7 +45,11 @@ class Regular_triangulation_cell_base_with_id_and_wcc_3
   bool _wcc_constructed;
   int  _id;                        // cell info
 
-  void invalidate_circumcenter() { _wcc_constructed = false; }
+public:
+  void invalidate_weighted_circumcenter_cache()
+  {
+      _wcc_constructed = false;
+  }
 
 public:
   typedef typename Cb::Vertex_handle                   Vertex_handle;
@@ -82,20 +86,20 @@ public:
   // but there's not much we can do for this now.
   void set_vertex(int i, Vertex_handle v)
   {
-      invalidate_circumcenter();
+      invalidate_weighted_circumcenter_cache();
       Cb::set_vertex(i, v);
   }
 
   void set_vertices()
   {
-      invalidate_circumcenter();
+      invalidate_weighted_circumcenter_cache();
       Cb::set_vertices();
   }
 
   void set_vertices(Vertex_handle v0, Vertex_handle v1,
                     Vertex_handle v2, Vertex_handle v3)
   {
-      invalidate_circumcenter();
+      invalidate_weighted_circumcenter_cache();
       Cb::set_vertices(v0, v1, v2, v3);
   }
 
@@ -113,6 +117,7 @@ public:
                                   s.x(), s.y(), s.z(), s.weight(),
                                   x, y, z, w);
           _wcc = Weighted_point(Bare_point(x, y, z), w);
+          _wcc_constructed = true;
       }
       return _wcc;
   }
