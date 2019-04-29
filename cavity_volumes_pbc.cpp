@@ -72,16 +72,20 @@ typedef boost::array<double, 4>                             Array_double_4;  // 
 
 struct Voids_result
 {
+    struct Void_info {
+        long double volume;      // volume of each cavity
+        long double surface;     // area of each cavity
+        std::set<int> atoms;    // set of atoms for each cavity
+        Void_info () : volume(0), surface(0), atoms() {}
+    };
+    std::vector <Void_info> voids;        // measurement results for discovered voids (num_voids size)
     double domain_cells_volume;           // sum of primary domain tetrahedral cells (for checking)
-    int num_voids;                        // number of voids
-    std::vector<long double> volume;      // volume of each cavity (num_voids values)
-    std::vector<long double> surface;     // area of each cavity (num_voids values)
-    std::vector<std::set<int> > atoms;    // set of atoms for each cavity (num_voids sets)
     std::vector<long double> atom_surf;   // for each atom : surface exposed to cavities (natoms values)
     std::ostream &out_log;                // information stream (debugging Voronoi calculation info)
     Voids_result(int natoms, std::ostream &strm) : atom_surf(natoms), out_log(strm) {}
 };
 
+bool void_greater(const Voids_result::Void_info& v1, const Voids_result::Void_info& v2) { return v1.volume > v2.volume; }
 
 // Cell key: two cells in periodic triangulation are equivalent if they can be superimposed by translation:
 //   1) set(a0,a1,a2,a3) == set(a0',a1',a2',a3')                         have same set of atom ids
@@ -272,15 +276,13 @@ bool periodic_regular_triangulation_voids(const Wpi_container& points, Voids_res
     // Find connected components on this Voronoi subnetwork
     std::vector<int> component(num_vertices(G));
     int num_components = boost::connected_components(G, &component[0]);
-    res.num_voids = num_components;
     res.out_log << "Number of connected components (voids) : " << num_components << std::endl;
 
-    // Calculate total volume and surface of each component
-    res.volume.resize(num_components, 0.0L);
-    res.surface.resize(num_components, 0.0L);
-    res.atoms.resize(num_components);
+    // Reserve storage for results
+    res.voids.resize(num_components);
     std::fill(res.atom_surf.begin(), res.atom_surf.end(), 0.0L);
 
+    // Calculate total volume and surface of each component
     for (boost::tie(vi, vi_end) = vertices(G); vi != vi_end; ++vi) {
         const int comp_id = component[*vi];
         Cell_handle cell = G[*vi];               // current cell
@@ -288,12 +290,12 @@ bool periodic_regular_triangulation_voids(const Wpi_container& points, Voids_res
         Array_double_4 Sa;                       // per atom surface in cell
         Vc = cell_void_volume(cell, Sc, Sa);     // void volume of cell and its surface area
 
-        res.volume[comp_id] += Vc;               // add to volume of component
-        res.surface[comp_id] += Sc;
+        res.voids[comp_id].volume += Vc;               // add to volume of component
+        res.voids[comp_id].surface += Sc;
         for (int k = 0; k < 4; k++) {            // process four cell atoms
             int atom_id = cell->vertex(k)->info().atom_id;
             res.atom_surf[atom_id] += Sa[k];     // atom exposed surface
-            res.atoms[comp_id].insert(atom_id);  // add to set of cavity atoms
+            res.voids[comp_id].atoms.insert(atom_id);  // add to set of cavity atoms
         }
     }
 
@@ -301,6 +303,9 @@ bool periodic_regular_triangulation_voids(const Wpi_container& points, Voids_res
     for (Cell_periodic_map::iterator pos = map_cells.begin(); pos != map_cells.end(); ++pos) {
         res.domain_cells_volume += fabs(T.tetrahedron(pos->second).volume());
     }
+
+    // Sort cavities by volume
+    std::sort(res.voids.begin(), res.voids.end(), void_greater);
 
     return true;
 }
@@ -413,22 +418,22 @@ bool process_conf(CavConfig &cfg)
     cfg.out_inf << std::setprecision(12);
     cfg.out_inf << "Comp. id :     Volume              Surface " << std::endl;
 
-    for (int i = 0; i < res.num_voids; i++) {
-        cfg.out_inf << std::setw(8) << i << " : " << std::left << std::setw(17) << res.volume[i] << "  ";
-        cfg.out_inf << res.surface[i] << std::right << std::endl;
+    for (std::size_t i = 0; i < res.voids.size(); i++) {
+        cfg.out_inf << std::setw(8) << i << " : " << std::left << std::setw(17) << res.voids[i].volume << "  ";
+        cfg.out_inf << res.voids[i].surface << std::right << std::endl;
 
-        if (cfg.out_vol.is_open()) cfg.out_vol << res.volume[i] << std::endl;
+        if (cfg.out_vol.is_open()) cfg.out_vol << res.voids[i].volume << std::endl;
 
         if (cfg.out_stl.is_open()) {  // draw surface of void
             std::vector<Weighted_point> wp;
-            pbc_unwrap_cavity_atoms(res.atoms[i], cfg.atoms, cfg.radii, cfg.box, cfg.r_scale, cfg.r_probe, wp);
+            pbc_unwrap_cavity_atoms(res.voids[i].atoms, cfg.atoms, cfg.radii, cfg.box, cfg.r_scale, cfg.r_probe, wp);
             Surf::write_cavity_surface(cfg.out_stl, wp.begin(), wp.end(), cfg.nSubdiv);
         }
     }
 
     Surf::write_footer(cfg.out_stl);
 
-    cfg.out_inf << "Voids count : " << res.num_voids << std::endl;
+    cfg.out_inf << "Voids count : " << res.voids.size() << std::endl;
     const double box_volume = cfg.box[0] * cfg.box[1] * cfg.box[2];
     cfg.out_inf << "SumV/BoxV : " << res.domain_cells_volume/box_volume << std::endl;
     if (fabs(res.domain_cells_volume/box_volume - 1.0) > 1e-10) {
@@ -436,9 +441,13 @@ bool process_conf(CavConfig &cfg)
         return false;
     }
 
-    long double total_void_volume = std::accumulate(res.volume.begin(), res.volume.end(), 0.0L);
-    long double total_void_surface = std::accumulate(res.surface.begin(), res.surface.end(), 0.0L);
+    long double total_void_volume = 0.0L;
+    long double total_void_surface = 0.0L;
     long double total_void_surface_from_atoms = std::accumulate(res.atom_surf.begin(), res.atom_surf.end(), 0.0L);  // for check
+    for (const auto &v: res.voids) {
+        total_void_volume += v.volume;
+        total_void_surface += v.surface;
+    }
 
     cfg.out_evf << total_void_volume / box_volume << std::endl;
     // accumulate per atom surfaces
@@ -491,11 +500,13 @@ int main(int argc, const char *argv[])
     t.stop();
 
     // save accumulated per-atom surfaces
-    long double total_surf = std::accumulate(cfg.atom_confs_surf.begin(), cfg.atom_confs_surf.end(), 0.0L);
-    cfg.out_asf << total_surf << std::endl;  // first line is total exposed surface of all atoms in all confs
-    cfg.out_asf << cfg.atom_confs_surf.size() << std::endl;  // second line is the number of atoms
-    for (size_t i = 0; i < cfg.atom_confs_surf.size(); i++)
-        cfg.out_asf << cfg.atom_confs_surf[i] << std::endl;
+    if (cfg.out_asf.is_open()) {
+        long double total_surf = std::accumulate(cfg.atom_confs_surf.begin(), cfg.atom_confs_surf.end(), 0.0L);
+        cfg.out_asf << total_surf << std::endl;  // first line is total exposed surface of all atoms in all confs
+        cfg.out_asf << cfg.atom_confs_surf.size() << std::endl;  // second line is the number of atoms
+        for (size_t i = 0; i < cfg.atom_confs_surf.size(); i++)
+            cfg.out_asf << cfg.atom_confs_surf[i] << std::endl;
+    }
 
     cfg.out_inf << "Processed " << processed_cnt << " (of " << cfg.traj_ts_cnt() << ") configurations." << std::endl;
     cfg.out_inf << "Time: " << t.time() << " sec." << std::endl;
