@@ -1,0 +1,19 @@
+############# fin_cavity_volumes config v4  ##############################
+DhaAWT_traj.xtc - input trajectory file with coordinates
+1 10 1  - first / last / step - cycle over configurations
+DhaAWT.rad - file with atomic radii
+##########################################################################
+0 - trajecory file format selector (0: Gromacs xtc, gro, g96, 1: text)
+0 - do PBC correction for molecule (0/1)
+##########################################################################
+0.1 - input radii scale factor (final R = scale * Ri + Rprobe)
+0.14 - probe radius
+##########################################################################
+1cavout_info.dat - information output file (! - do not write)
+1 - be verbose: print information to the screen (0/1)
+##########################################################################
+!2cavout_asurf.dat - contributions of atoms to voids surface
+!3cavout_volumes.dat - all encountered void volumes for distribution calc
+##########################################################################
+!5cavout_3dmesh.stl - file for writing 3D graphics mesh of cavities
+2 - 3D surface subdivision parameter

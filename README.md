@@ -3,11 +3,9 @@ cavity-volumes-pbc
 
 This program calculates volume and area of cavities available for a given probe inside molecular dynamics models with periodic boundary conditions.
 
-Features
---------
-- Voronoi-based fast and exact volume and surface calculation for voids
+- Voronoi-based fast analytical volume and surface calculation for solvent-accessible voids
 - input from GROMACS trajectory or simple text file
-- optional 3D mesh output for visualization of voids, STL format viewable in VMD
+- optional 3D mesh output for visualization of voids, STL format viewable in VMD (experimental)
 
 Build instructions
 ------------------

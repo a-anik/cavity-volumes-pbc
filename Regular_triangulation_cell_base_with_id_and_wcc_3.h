@@ -1,5 +1,5 @@
 // Copyright (c) 1999-2006  INRIA Sophia-Antipolis (France).
-// Copyright (C) 2014 Alexey Anikeenko
+// Copyright (C) 2014,2019 Alexey Anikeenko
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
