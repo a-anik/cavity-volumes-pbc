@@ -3,9 +3,12 @@ cavity-volumes-pbc
 
 This program calculates volume and area of cavities available for a given probe inside molecular dynamics models with periodic boundary conditions.
 
-- Voronoi-based fast analytical volume and surface calculation for solvent-accessible voids
+- fast analytical volume and surface computation for Solvent-Accessible voids 
+- uses weighted Voronoi (power) diagram / regular triangulation, works with atoms of different radii
 - input from GROMACS trajectory or simple text file
 - optional 3D mesh output for visualization of voids, STL format viewable in VMD (experimental)
+
+![](sas_voids.png)
 
 Build instructions
 ------------------
@@ -26,12 +29,12 @@ Usage
 -----
 `./cavity_volumes_pbc [run_control_file]`
 
-Default run control filename: *cavity\_volumes\_pbc.inp*.  You will find one in the *./examples* directory.
+Default run control filename: *cavity\_volumes\_pbc.inp*. Sample control files can be found in the *./examples* directory.
 
 Known bugs
 ----------
 - fails on very small and sparse configurations where periodic regular triangulation can't be built
-- optional 3D mesh output works only for small isolated cavities
+- optional/experimental 3D mesh output works only for small isolated cavities
 
 
 Citation
