@@ -416,10 +416,10 @@ bool process_conf(CavConfig &cfg)
 
     Surf::write_header(cfg.out_stl);
     cfg.out_inf << std::setprecision(12);
-    cfg.out_inf << "Comp. id :     Volume              Surface " << std::endl;
+    cfg.out_inf << "Void num :     Volume              Surface " << std::endl;
 
     for (std::size_t i = 0; i < res.voids.size(); i++) {
-        cfg.out_inf << std::setw(8) << i << " : " << std::left << std::setw(17) << res.voids[i].volume << "  ";
+        cfg.out_inf << std::setw(8) << i+1 << " : " << std::left << std::setw(17) << res.voids[i].volume << "  ";
         cfg.out_inf << res.voids[i].surface << std::right << std::endl;
 
         if (cfg.out_vol.is_open()) cfg.out_vol << res.voids[i].volume << std::endl;
