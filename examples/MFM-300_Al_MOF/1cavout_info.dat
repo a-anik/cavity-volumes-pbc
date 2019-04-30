@@ -1,0 +1,42 @@
+Trajectory file : mfm-300_Al.trr
+traj first/last/step : 1 1 1
+file format : 0
+Radii file : mfm-300_Al.rad
+r[0] ... r[1152] : 0.2004 ... 0.148
+Shell width : 0.5
+R scale factor : 1
+Rprobe : 0.2
+Subdivision depth : 2
+Run control file : cavity_volumes_pbc.inp
+
+Number of input atoms : 1152
+MD info : step 10  time 10
+Box : [ 2.96589994430542, 2.96589994430542, 2.35459995269775 ]
+Last atom : 2.03788542747498 2.40710544586182 2.23127794265747
+Number of input points for RT : 9216
+Number of vertices in RT : 8704
+Number of cells : 65015
+Number of finite cells : 64707
+Number of T3 periodic triangulation cells : 8376
+Number of vertices in G : 3768
+Number of edges in G : 6256
+Number of connected components (voids) : 8
+Void num :     Volume              Surface 
+       1 : 0.235166299435     3.17791635872
+       2 : 0.235129538152     3.17824631656
+       3 : 0.235116262244     3.17812566288
+       4 : 0.235073810089     3.17851441021
+       5 : 0.23424960728      3.17343518095
+       6 : 0.234244985409     3.17342977549
+       7 : 0.234241757783     3.17309653437
+       8 : 0.234202898973     3.17333396944
+Voids count : 8
+SumV/BoxV : 1
+packing fraction : 0.909357367337457
+box volume : 20.7123855984417
+voids total surface : 25.4060982086125
+voids surf atom sum : 25.4060982086125
+voids total volume  : 1.8774251593645
+
+Processed 1 (of 1) configurations.
+Time: 0.156724 sec.

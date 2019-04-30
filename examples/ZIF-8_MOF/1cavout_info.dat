@@ -1,0 +1,753 @@
+Trajectory file : zif8_traj_dt1ns.xtc
+traj first/last/step : 1 20 1
+file format : 0
+Radii file : zif8.rad
+r[0] ... r[2208] : 0.17 ... 0.098
+Shell width : 0.5
+R scale factor : 1
+Rprobe : 0.2
+Subdivision depth : 2
+Run control file : cavity_volumes_pbc.inp
+
+Number of input atoms : 2208
+MD info : step 0  time 0
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.1340000629425 2.54500007629395 1.69800007343292
+Number of input points for RT : 17664
+Number of vertices in RT : 17092
+Number of cells : 125583
+Number of finite cells : 125209
+Number of T3 periodic triangulation cells : 15927
+Number of vertices in G : 4063
+Number of edges in G : 6244
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.303732707343     2.65569192711
+       2 : 0.303214455266     2.66144787797
+       3 : 0.300916396636     2.65022666943
+       4 : 0.300051955675     2.64935768954
+       5 : 0.299294837402     2.64774608594
+       6 : 0.297976846155     2.67072211793
+       7 : 0.295237555342     2.62656046024
+       8 : 0.294423926718     2.62871575562
+       9 : 0.293316187553     2.60801098905
+      10 : 0.292269832032     2.66813844374
+      11 : 0.291960604576     2.55798832486
+      12 : 0.291136691622     2.60042396833
+      13 : 0.287872834097     2.58530861606
+      14 : 0.286502261997     2.58042116397
+      15 : 0.285199851189     2.54892118996
+      16 : 0.27741463002      2.49103382613
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.880215884549048
+box volume : 39.2416102579817
+voids total surface : 41.830715105861
+voids surf atom sum : 41.830715105861
+voids total volume  : 4.70052157362336
+
+Number of input atoms : 2208
+MD info : step 1000000  time 1000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.12100005149841 2.5530002117157 1.70200002193451
+Number of input points for RT : 17664
+Number of vertices in RT : 17092
+Number of cells : 125489
+Number of finite cells : 125121
+Number of T3 periodic triangulation cells : 15904
+Number of vertices in G : 4021
+Number of edges in G : 6156
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.302508431078     2.65274130173
+       2 : 0.298696239567     2.61180062834
+       3 : 0.297214510091     2.62566930285
+       4 : 0.295136785951     2.60728795611
+       5 : 0.294698284379     2.63747494991
+       6 : 0.294100426199     2.59906367831
+       7 : 0.293753097543     2.61057559842
+       8 : 0.293738457062     2.62730172639
+       9 : 0.293702229111     2.60333435942
+      10 : 0.292168207503     2.61892549158
+      11 : 0.290427451744     2.59465444695
+      12 : 0.290272306466     2.58328700928
+      13 : 0.289146537629     2.60567955124
+      14 : 0.287644862073     2.5781573886
+      15 : 0.287183256489     2.51446856102
+      16 : 0.282117886295     2.55828741256
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.880674902523167
+box volume : 39.2416102579817
+voids total surface : 41.6287093627191
+voids surf atom sum : 41.6287093627191
+voids total volume  : 4.68250896918154
+
+Number of input atoms : 2208
+MD info : step 2000000  time 2000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.14900016784668 2.53600001335144 1.71000003814697
+Number of input points for RT : 17664
+Number of vertices in RT : 17096
+Number of cells : 124959
+Number of finite cells : 124601
+Number of T3 periodic triangulation cells : 15819
+Number of vertices in G : 4055
+Number of edges in G : 6229
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.309668440094     2.74491157218
+       2 : 0.302483679242     2.66464282573
+       3 : 0.302273388634     2.57486075223
+       4 : 0.299943129103     2.62537577448
+       5 : 0.299046370816     2.67434011665
+       6 : 0.297036457373     2.61363748458
+       7 : 0.296295935454     2.58391495093
+       8 : 0.29578081121      2.59516450245
+       9 : 0.295109831195     2.64471684446
+      10 : 0.294674965183     2.61469179802
+      11 : 0.291053677636     2.57026341076
+      12 : 0.289008476623     2.56763356704
+      13 : 0.288520036182     2.57196202554
+      14 : 0.287438770485     2.58399451798
+      15 : 0.284747457756     2.53972979562
+      16 : 0.281745568013     2.54402578048
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.879851337292154
+box volume : 39.2416102579817
+voids total surface : 41.713865719132
+voids surf atom sum : 41.713865719132
+voids total volume  : 4.71482699499899
+
+Number of input atoms : 2208
+MD info : step 3000000  time 3000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.12100005149841 2.5550000667572 1.69800007343292
+Number of input points for RT : 17664
+Number of vertices in RT : 17108
+Number of cells : 125598
+Number of finite cells : 125218
+Number of T3 periodic triangulation cells : 15953
+Number of vertices in G : 4110
+Number of edges in G : 6314
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.311404653637     2.71907806791
+       2 : 0.311127445388     2.67804930654
+       3 : 0.303202282329     2.67224079486
+       4 : 0.301297629476     2.63620708285
+       5 : 0.30065503054      2.67440197805
+       6 : 0.297514808193     2.61204550744
+       7 : 0.294422794352     2.5880786396
+       8 : 0.293873341783     2.62361412858
+       9 : 0.291553554457     2.60406877178
+      10 : 0.290808250829     2.65070273356
+      11 : 0.289360497849     2.56501804254
+      12 : 0.289156780377     2.58958071496
+      13 : 0.287998706753     2.59194218763
+      14 : 0.283844149227     2.50825120004
+      15 : 0.281552179451     2.57968785237
+      16 : 0.277581293978     2.469239532
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.880092754408285
+box volume : 39.2416102579817
+voids total surface : 41.7622065407189
+voids surf atom sum : 41.7622065407189
+voids total volume  : 4.70535339861818
+
+Number of input atoms : 2208
+MD info : step 4000000  time 4000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.14300012588501 2.54700016975403 1.70700013637543
+Number of input points for RT : 17664
+Number of vertices in RT : 17100
+Number of cells : 125710
+Number of finite cells : 125358
+Number of T3 periodic triangulation cells : 15953
+Number of vertices in G : 4198
+Number of edges in G : 6447
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.314251597937     2.76191407349
+       2 : 0.307372452275     2.68592632111
+       3 : 0.305057702246     2.67218922481
+       4 : 0.304621509024     2.67701436453
+       5 : 0.301609116997     2.65166274864
+       6 : 0.301026165337     2.66416181244
+       7 : 0.297699825534     2.60818793148
+       8 : 0.295366822432     2.62980331364
+       9 : 0.294193221325     2.61662509598
+      10 : 0.292190895646     2.62081154113
+      11 : 0.290146701015     2.57827592909
+      12 : 0.289128413807     2.60828090461
+      13 : 0.289011031708     2.54286459823
+      14 : 0.287631992478     2.6037697268
+      15 : 0.286668241816     2.54061242378
+      16 : 0.278955089697     2.53283264455
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.879339029460126
+box volume : 39.2416102579817
+voids total surface : 41.9949326543171
+voids surf atom sum : 41.9949326543171
+voids total volume  : 4.73493077927555
+
+Number of input atoms : 2208
+MD info : step 5000000  time 5000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.14600014686584 2.55100011825562 1.71800005435944
+Number of input points for RT : 17664
+Number of vertices in RT : 17100
+Number of cells : 125402
+Number of finite cells : 125060
+Number of T3 periodic triangulation cells : 15869
+Number of vertices in G : 4016
+Number of edges in G : 6160
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.310594915191     2.71812847433
+       2 : 0.301846832312     2.6317814843
+       3 : 0.301077214693     2.62479911096
+       4 : 0.29785386132      2.59378225053
+       5 : 0.294405274623     2.61245118657
+       6 : 0.294235582356     2.62418010513
+       7 : 0.293502860645     2.59653900999
+       8 : 0.292497625077     2.64755973639
+       9 : 0.291730296709     2.58012216655
+      10 : 0.291020125568     2.60842676848
+      11 : 0.290325592977     2.60962680876
+      12 : 0.289196089919     2.5971019539
+      13 : 0.289151767173     2.60671059811
+      14 : 0.287312134219     2.54718884967
+      15 : 0.282435356238     2.5686989048
+      16 : 0.281682512965     2.51496870099
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.880512853291222
+box volume : 39.2416102579817
+voids total surface : 41.6820661094659
+voids surf atom sum : 41.6820661094659
+voids total volume  : 4.68886804198414
+
+Number of input atoms : 2208
+MD info : step 6000000  time 6000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.12400007247925 2.53900003433228 1.73600006103516
+Number of input points for RT : 17664
+Number of vertices in RT : 17096
+Number of cells : 125224
+Number of finite cells : 124852
+Number of T3 periodic triangulation cells : 15861
+Number of vertices in G : 4097
+Number of edges in G : 6298
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.312555293816     2.69177278247
+       2 : 0.303929445576     2.64030498021
+       3 : 0.301517705535     2.66518619708
+       4 : 0.298427365784     2.63858869017
+       5 : 0.298000418302     2.63250052496
+       6 : 0.297946483253     2.5780284987
+       7 : 0.297189975507     2.64617564518
+       8 : 0.295616309941     2.61663062876
+       9 : 0.294708268964     2.60334295416
+      10 : 0.292007330828     2.63502022808
+      11 : 0.291298835518     2.62721859588
+      12 : 0.288424515827     2.59128053213
+      13 : 0.288372134693     2.55372572407
+      14 : 0.287012124265     2.54419611071
+      15 : 0.281830618771     2.51479727681
+      16 : 0.279608017763     2.48323900029
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.880013974620592
+box volume : 39.2416102579817
+voids total surface : 41.6620083696541
+voids surf atom sum : 41.6620083696541
+voids total volume  : 4.70844484434305
+
+Number of input atoms : 2208
+MD info : step 7000000  time 7000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.13900017738342 2.56700015068054 1.69600009918213
+Number of input points for RT : 17664
+Number of vertices in RT : 17104
+Number of cells : 125825
+Number of finite cells : 125473
+Number of T3 periodic triangulation cells : 15954
+Number of vertices in G : 4006
+Number of edges in G : 6139
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.317094765699     2.77354469902
+       2 : 0.307680538318     2.67584000638
+       3 : 0.30082384818      2.611718251
+       4 : 0.300145886312     2.62844327817
+       5 : 0.297432503933     2.6142902069
+       6 : 0.29494790317      2.64617651178
+       7 : 0.293796929628     2.59690702213
+       8 : 0.292603758431     2.59333527208
+       9 : 0.291628444435     2.56602417218
+      10 : 0.290556959895     2.63698845563
+      11 : 0.289181129745     2.597827619
+      12 : 0.288288647867     2.58211200025
+      13 : 0.287604835159     2.5694007908
+      14 : 0.28253824518      2.54511398956
+      15 : 0.281044099847     2.54900666824
+      16 : 0.278883960036     2.50323215974
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.880375641443511
+box volume : 39.2416102579817
+voids total surface : 41.6899611028566
+voids surf atom sum : 41.6899611028566
+voids total volume  : 4.6942524558348
+
+Number of input atoms : 2208
+MD info : step 8000000  time 8000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.125 2.55000019073486 1.70300006866455
+Number of input points for RT : 17664
+Number of vertices in RT : 17100
+Number of cells : 125342
+Number of finite cells : 124992
+Number of T3 periodic triangulation cells : 15908
+Number of vertices in G : 4082
+Number of edges in G : 6258
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.320618551495     2.73010314273
+       2 : 0.302762715728     2.66352172747
+       3 : 0.302670537395     2.66036992587
+       4 : 0.299274539472     2.6424060482
+       5 : 0.29827271682      2.61529011002
+       6 : 0.297608009324     2.66988326789
+       7 : 0.296995189356     2.62363618189
+       8 : 0.295399816623     2.57536452365
+       9 : 0.294748453624     2.61294715763
+      10 : 0.294474415243     2.61794416493
+      11 : 0.293789691309     2.64599391587
+      12 : 0.293711365322     2.63247631343
+      13 : 0.29243249322      2.59421795508
+      14 : 0.290025869772     2.62700940828
+      15 : 0.288871086642     2.5554966003
+      16 : 0.282818327886     2.5529159217
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.879095843722001
+box volume : 39.2416102579817
+voids total surface : 42.0195763649443
+voids surf atom sum : 42.0195763649443
+voids total volume  : 4.74447377923135
+
+Number of input atoms : 2208
+MD info : step 9000000  time 9000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.10000014305115 2.55000019073486 1.71100008487701
+Number of input points for RT : 17664
+Number of vertices in RT : 17112
+Number of cells : 125883
+Number of finite cells : 125513
+Number of T3 periodic triangulation cells : 15972
+Number of vertices in G : 4100
+Number of edges in G : 6298
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.307851994372     2.67831936419
+       2 : 0.306042760338     2.6634671281
+       3 : 0.302258701011     2.63432957757
+       4 : 0.302121836145     2.64430195032
+       5 : 0.301023768338     2.67968661248
+       6 : 0.300511145527     2.65392905996
+       7 : 0.299736697448     2.65943237569
+       8 : 0.29490626512      2.6003342766
+       9 : 0.293303429667     2.59613086102
+      10 : 0.292465637802     2.59713636998
+      11 : 0.292072769917     2.58820189974
+      12 : 0.291682553114     2.5953739667
+      13 : 0.290877199495     2.58529694162
+      14 : 0.289157067772     2.58848430314
+      15 : 0.283951887384     2.55253728244
+      16 : 0.277365645705     2.50730581914
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.879583703928296
+box volume : 39.2416102579817
+voids total surface : 41.8242677886904
+voids surf atom sum : 41.8242677886904
+voids total volume  : 4.72532935915556
+
+Number of input atoms : 2208
+MD info : step 10000000  time 10000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.14000010490417 2.55800008773804 1.72000002861023
+Number of input points for RT : 17664
+Number of vertices in RT : 17096
+Number of cells : 125814
+Number of finite cells : 125450
+Number of T3 periodic triangulation cells : 15935
+Number of vertices in G : 4073
+Number of edges in G : 6254
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.31085904076      2.70341155955
+       2 : 0.303306417445     2.65586587073
+       3 : 0.301092912725     2.64375627966
+       4 : 0.298953377903     2.62116407715
+       5 : 0.296957645858     2.64244812635
+       6 : 0.295301455632     2.67730977031
+       7 : 0.294200582982     2.6312897724
+       8 : 0.293961584349     2.60232866201
+       9 : 0.29372899382      2.63438350369
+      10 : 0.290516019548     2.58639564889
+      11 : 0.288521979672     2.59030398082
+      12 : 0.286079192708     2.55980263526
+      13 : 0.285809811445     2.59851640934
+      14 : 0.285250909631     2.52385109546
+      15 : 0.281528768097     2.55781922134
+      16 : 0.280559312001     2.47615087365
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.880569936509612
+box volume : 39.2416102579817
+voids total surface : 41.7047974865959
+voids surf atom sum : 41.7047974865959
+voids total volume  : 4.68662800457582
+
+Number of input atoms : 2208
+MD info : step 11000000  time 11000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.0990002155304 2.55000019073486 1.68800008296967
+Number of input points for RT : 17664
+Number of vertices in RT : 17096
+Number of cells : 125197
+Number of finite cells : 124841
+Number of T3 periodic triangulation cells : 15861
+Number of vertices in G : 4079
+Number of edges in G : 6258
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.310876843201     2.75433947616
+       2 : 0.309914579242     2.6971375913
+       3 : 0.308149402197     2.68920720831
+       4 : 0.303416409629     2.6795228367
+       5 : 0.302682315707     2.6182524296
+       6 : 0.300406623015     2.6092661802
+       7 : 0.29982963422      2.65159977689
+       8 : 0.299108969384     2.64577382162
+       9 : 0.296944964188     2.5963554164
+      10 : 0.289144906892     2.6248295015
+      11 : 0.288529760807     2.53135928306
+      12 : 0.288384941604     2.59224733777
+      13 : 0.284596626191     2.57269631349
+      14 : 0.284149942595     2.56091450007
+      15 : 0.283085281462     2.53144464393
+      16 : 0.268848334945     2.47963706969
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.879768707138684
+box volume : 39.2416102579817
+voids total surface : 41.8345833866752
+voids surf atom sum : 41.8345833866752
+voids total volume  : 4.71806953527703
+
+Number of input atoms : 2208
+MD info : step 12000000  time 12000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.13800001144409 2.57300019264221 1.71600008010864
+Number of input points for RT : 17664
+Number of vertices in RT : 17108
+Number of cells : 125521
+Number of finite cells : 125161
+Number of T3 periodic triangulation cells : 15905
+Number of vertices in G : 4020
+Number of edges in G : 6170
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.309973149003     2.70723962412
+       2 : 0.307336036599     2.66459782484
+       3 : 0.305146894948     2.68367945186
+       4 : 0.302367412085     2.6661112458
+       5 : 0.300528575065     2.67906051357
+       6 : 0.298803845004     2.60919353453
+       7 : 0.294289657289     2.60574546688
+       8 : 0.29218237344      2.55785541409
+       9 : 0.288116580644     2.57380758949
+      10 : 0.287733283098     2.59188035191
+      11 : 0.287024500975     2.54601167726
+      12 : 0.285361911175     2.53809179928
+      13 : 0.280558503396     2.52667275582
+      14 : 0.280012656633     2.50159002269
+      15 : 0.278077048669     2.49219031708
+      16 : 0.277122640759     2.50361221847
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.880875554340159
+box volume : 39.2416102579817
+voids total surface : 41.4473398076878
+voids surf atom sum : 41.4473398076878
+voids total volume  : 4.67463506878161
+
+Number of input atoms : 2208
+MD info : step 13000000  time 13000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.15300011634827 2.55600023269653 1.69200003147125
+Number of input points for RT : 17664
+Number of vertices in RT : 17088
+Number of cells : 125073
+Number of finite cells : 124703
+Number of T3 periodic triangulation cells : 15848
+Number of vertices in G : 4071
+Number of edges in G : 6227
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.314420421971     2.70792346955
+       2 : 0.302031222402     2.67827830228
+       3 : 0.300206156294     2.65454939578
+       4 : 0.298985187858     2.65368897538
+       5 : 0.298473360961     2.59760796753
+       6 : 0.296840695768     2.64231768274
+       7 : 0.296020323471     2.62776894227
+       8 : 0.292879654532     2.61414477429
+       9 : 0.292753706577     2.61701673447
+      10 : 0.291470425861     2.60045206305
+      11 : 0.291343862963     2.60192171383
+      12 : 0.288051674398     2.59749321673
+      13 : 0.28192551863      2.53993826181
+      14 : 0.281234485409     2.53026108724
+      15 : 0.281218666911     2.55899840032
+      16 : 0.277066620215     2.50034617254
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.88061341128913
+box volume : 39.2416102579817
+voids total surface : 41.722707159814
+voids surf atom sum : 41.722707159814
+voids total volume  : 4.68492198422191
+
+Number of input atoms : 2208
+MD info : step 14000000  time 14000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.13700008392334 2.52000021934509 1.70900011062622
+Number of input points for RT : 17664
+Number of vertices in RT : 17108
+Number of cells : 125198
+Number of finite cells : 124818
+Number of T3 periodic triangulation cells : 15880
+Number of vertices in G : 3984
+Number of edges in G : 6100
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.304776943472     2.67628044861
+       2 : 0.303595946966     2.61502846462
+       3 : 0.300701019263     2.6420308823
+       4 : 0.295189742123     2.60454261671
+       5 : 0.2949341735       2.64986810387
+       6 : 0.294764548138     2.59856156689
+       7 : 0.293174650004     2.60241043021
+       8 : 0.293144287904     2.58934830212
+       9 : 0.293122428645     2.59083494779
+      10 : 0.292557897094     2.54415560758
+      11 : 0.291608839826     2.60809967792
+      12 : 0.28891316884      2.61478328502
+      13 : 0.288766418913     2.5690945478
+      14 : 0.288257728011     2.60117716501
+      15 : 0.284233444223     2.55821035841
+      16 : 0.283346976825     2.53029516332
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.880456276312167
+box volume : 39.2416102579817
+voids total surface : 41.594721568184
+voids surf atom sum : 41.594721568184
+voids total volume  : 4.69108821374579
+
+Number of input atoms : 2208
+MD info : step 15000000  time 15000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.13499999046326 2.56600022315979 1.69700002670288
+Number of input points for RT : 17664
+Number of vertices in RT : 17092
+Number of cells : 125172
+Number of finite cells : 124800
+Number of T3 periodic triangulation cells : 15869
+Number of vertices in G : 4049
+Number of edges in G : 6213
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.304950518422     2.7084693837
+       2 : 0.299193753435     2.66308357788
+       3 : 0.298644987261     2.62220906695
+       4 : 0.298357173034     2.66173109529
+       5 : 0.297065339715     2.59602185788
+       6 : 0.293511142614     2.63395725807
+       7 : 0.293504785493     2.5819613496
+       8 : 0.293207309203     2.59887929046
+       9 : 0.292237501298     2.57737523303
+      10 : 0.291999565473     2.62812699827
+      11 : 0.288235093622     2.57252140156
+      12 : 0.282686738254     2.53385033744
+      13 : 0.279641705556     2.5100212445
+      14 : 0.278992390055     2.54793136812
+      15 : 0.275004639722     2.52997122272
+      16 : 0.273586009859     2.53582304167
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.881737303273051
+box volume : 39.2416102579817
+voids total surface : 41.5019337271736
+voids surf atom sum : 41.5019337271736
+voids total volume  : 4.6408186530168
+
+Number of input atoms : 2208
+MD info : step 16000000  time 16000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.13700008392334 2.54900002479553 1.7260000705719
+Number of input points for RT : 17664
+Number of vertices in RT : 17088
+Number of cells : 125372
+Number of finite cells : 125022
+Number of T3 periodic triangulation cells : 15896
+Number of vertices in G : 4062
+Number of edges in G : 6230
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.306386342191     2.69264651072
+       2 : 0.304837970872     2.66148447261
+       3 : 0.30281065566      2.64850608488
+       4 : 0.302720855576     2.67717367452
+       5 : 0.300609882102     2.58604488668
+       6 : 0.296640915176     2.58584880738
+       7 : 0.296230616677     2.6094190602
+       8 : 0.295501771938     2.62301624473
+       9 : 0.29274428861      2.60254806844
+      10 : 0.291590361198     2.58770065758
+      11 : 0.291457243349     2.58636280887
+      12 : 0.290649323139     2.56686794646
+      13 : 0.289865158675     2.58191536056
+      14 : 0.287247642246     2.56829178351
+      15 : 0.283486358039     2.58237202549
+      16 : 0.283102133036     2.57762899372
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.879824464707707
+box volume : 39.2416102579817
+voids total surface : 41.7378273863405
+voids surf atom sum : 41.7378273863405
+voids total volume  : 4.71588151848449
+
+Number of input atoms : 2208
+MD info : step 17000000  time 17000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.13300013542175 2.56500005722046 1.67900013923645
+Number of input points for RT : 17664
+Number of vertices in RT : 17108
+Number of cells : 125394
+Number of finite cells : 125008
+Number of T3 periodic triangulation cells : 15896
+Number of vertices in G : 3992
+Number of edges in G : 6111
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.310699848111     2.7536716629
+       2 : 0.308667011661     2.72533590644
+       3 : 0.301161165696     2.68189986563
+       4 : 0.297561252877     2.64660407358
+       5 : 0.296137241866     2.64970729186
+       6 : 0.295520920912     2.62759230308
+       7 : 0.295065773826     2.58342970173
+       8 : 0.292771950624     2.61617554763
+       9 : 0.289828268075     2.58808877869
+      10 : 0.287410995701     2.56067127613
+      11 : 0.284685705555     2.57009472766
+      12 : 0.284105383518     2.55462955064
+      13 : 0.284029217305     2.56778318869
+      14 : 0.282379002673     2.56287095025
+      15 : 0.28071709203      2.53495883641
+      16 : 0.278559786141     2.47447485666
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.881011493007719
+box volume : 39.2416102579817
+voids total surface : 41.6979885179682
+voids surf atom sum : 41.6979885179682
+voids total volume  : 4.66930061657023
+
+Number of input atoms : 2208
+MD info : step 18000000  time 18000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.13499999046326 2.54000020027161 1.7260000705719
+Number of input points for RT : 17664
+Number of vertices in RT : 17116
+Number of cells : 125451
+Number of finite cells : 125081
+Number of T3 periodic triangulation cells : 15908
+Number of vertices in G : 4076
+Number of edges in G : 6249
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.315540960853     2.79518197944
+       2 : 0.303542833239     2.6558720719
+       3 : 0.302007530562     2.66984050992
+       4 : 0.300717496317     2.66560623926
+       5 : 0.299394807535     2.65874689694
+       6 : 0.296747171551     2.61647638535
+       7 : 0.29628918698      2.57996448884
+       8 : 0.294708764118     2.61695266556
+       9 : 0.294295962123     2.58897444574
+      10 : 0.293711496537     2.58511390312
+      11 : 0.293056895195     2.58168972405
+      12 : 0.292081945691     2.58301870161
+      13 : 0.288753357757     2.60117229905
+      14 : 0.287908631314     2.53755692044
+      15 : 0.284801888989     2.59263726241
+      16 : 0.28372180737      2.55813433691
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.879533976688212
+box volume : 39.2416102579817
+voids total surface : 41.8869388305612
+voids surf atom sum : 41.8869388305612
+voids total volume  : 4.72728073613011
+
+Number of input atoms : 2208
+MD info : step 19000000  time 19000
+Box : [ 3.39820003509521, 3.39820003509521, 3.39820003509521 ]
+Last atom : 2.1340000629425 2.55400013923645 1.70100009441376
+Number of input points for RT : 17664
+Number of vertices in RT : 17112
+Number of cells : 125883
+Number of finite cells : 125559
+Number of T3 periodic triangulation cells : 15953
+Number of vertices in G : 4051
+Number of edges in G : 6233
+Number of connected components (voids) : 16
+Void num :     Volume              Surface 
+       1 : 0.3067977116       2.67029151442
+       2 : 0.300637052482     2.63927371715
+       3 : 0.299070092316     2.63550131528
+       4 : 0.29792766131      2.64787743152
+       5 : 0.29776341688      2.61573376982
+       6 : 0.296043288954     2.61773197342
+       7 : 0.29575440261      2.64986218475
+       8 : 0.292891866679     2.5779143377
+       9 : 0.291925053415     2.61218164477
+      10 : 0.29109092209      2.57782059134
+      11 : 0.290920339366     2.60414618569
+      12 : 0.290870544194     2.56964713232
+      13 : 0.290820390579     2.62158181084
+      14 : 0.290253211678     2.61986549295
+      15 : 0.289264436046     2.57368078891
+      16 : 0.28076285648      2.51389965839
+Voids count : 16
+SumV/BoxV : 1
+packing fraction : 0.880157995154569
+box volume : 39.2416102579817
+voids total surface : 41.7470095492697
+voids surf atom sum : 41.7470095492697
+voids total volume  : 4.70279324667956
+
+Processed 20 (of 20) configurations.
+Time: 4.227892 sec.

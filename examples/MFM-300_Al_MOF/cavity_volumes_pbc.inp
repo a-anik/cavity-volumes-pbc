@@ -1,0 +1,20 @@
+#############  cavity_volumes_pbc config v7  #############################
+mfm-300_Al.trr - input trajectory file with coordinates
+1 1 1  - first / last / step - cycle over configurations
+mfm-300_Al.rad - file with atomic radii
+##########################################################################
+0 - trajecory file format selector (0: Gromacs xtc, gro, g96, 1: text)
+0.5  - box thickening shell width [0, 1] for pbc triangulation
+##########################################################################
+1.0 - input radii scale factor (final R = scale * Ri + Rprobe)
+.20 - probe radius
+##########################################################################
+1cavout_info.dat - information output file (! - do not write)
+1 - be verbose: print information to the screen (0/1)
+##########################################################################
+!2cavout_asurf.dat - contributions of atoms to voids surface
+!3cavout_volumes.dat - all encountered void volumes for distribution calc
+!4cavout_evfract.dat - empty volume fraction in each conf (totV/boxV)
+##########################################################################
+!5cavout_3dmesh.stl - file for writing 3D graphics mesh of cavities
+2 - 3D surface subdivision parameter

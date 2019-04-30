@@ -1,0 +1,34 @@
+Trajectory file : mfm-300_Al.trr
+traj first/last/step : 1 1 1
+file format : 0
+Radii file : mfm-300_Al.rad
+r[0] ... r[1152] : 0.2004 ... 0.148
+Shell width : 0.5
+R scale factor : 1
+Rprobe : 0.4
+Subdivision depth : 2
+Run control file : Rscan_cavity_volumes_pbc.inp
+
+Number of input atoms : 1152
+MD info : step 10  time 10
+Box : [ 2.96589994430542, 2.96589994430542, 2.35459995269775 ]
+Last atom : 2.03788542747498 2.40710544586182 2.23127794265747
+Number of input points for RT : 9216
+Number of vertices in RT : 8314
+Number of cells : 55727
+Number of finite cells : 55419
+Number of T3 periodic triangulation cells : 6976
+Number of vertices in G : 0
+Number of edges in G : 0
+Number of connected components (voids) : 0
+Void num :     Volume              Surface 
+Voids count : 0
+SumV/BoxV : 1
+packing fraction : 1
+box volume : 20.7123855984417
+voids total surface : 0
+voids surf atom sum : 0
+voids total volume  : 0
+
+Processed 1 (of 1) configurations.
+Time: 0.112457 sec.
