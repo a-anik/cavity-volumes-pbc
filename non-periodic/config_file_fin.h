@@ -44,6 +44,7 @@ public:
     std::ofstream out_vol;      // raw cavity volumes
     std::ofstream out_stl;      // 3D surface file
     int nSubdiv;                // 3D surface subdivision parameter
+    double stl_scale;           // output coordinates scale factor
 
     // current timestep data
     Array_double_3 box;

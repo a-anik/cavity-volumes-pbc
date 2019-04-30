@@ -264,17 +264,16 @@ void build_input(const CavConfig::Atoms_container &in_atoms, const CavConfig::Ra
 // Scales coordinates for atoms forming cavity (for drawing that cavity)
 void scale_cavity_atoms(const std::set<int> &cav_atoms, const CavConfig::Atoms_container &in_atoms,
                         const CavConfig::Radii_container &in_radii, const Array_double_3 &box,
-                        double r_scale, double r_probe,
+                        double r_scale, double r_probe, double stl_scale,
                         std::vector<Weighted_point> &out_points)
 {
-    const double ANGS_PER_NM = 1;  // since we output raw graphics for VMD (angst) from Gromacs file (nm)
     for (std::set<int>::const_iterator it = cav_atoms.begin(); it != cav_atoms.end(); ++it) {
         int atom_id = *it;
 
         Array_double_3 x = in_atoms[atom_id];
-        Weight weight = CGAL::square((in_radii[atom_id] * r_scale + r_probe)*ANGS_PER_NM);
+        Weight weight = CGAL::square((in_radii[atom_id] * r_scale + r_probe)*stl_scale);
 
-        const Point corrected_p(x[0]*ANGS_PER_NM, x[1]*ANGS_PER_NM, x[2]*ANGS_PER_NM);
+        const Point corrected_p(x[0]*stl_scale, x[1]*stl_scale, x[2]*stl_scale);
         out_points.push_back(Weighted_point(corrected_p, weight));
     }
 }
@@ -303,7 +302,7 @@ bool process_conf(CavConfig &cfg)
 
         if (cfg.out_stl.is_open()) {  // draw surface of void
             std::vector<Weighted_point> wp;
-            scale_cavity_atoms(res.voids[i].atoms, cfg.atoms, cfg.radii, cfg.box, cfg.r_scale, cfg.r_probe, wp);
+            scale_cavity_atoms(res.voids[i].atoms, cfg.atoms, cfg.radii, cfg.box, cfg.r_scale, cfg.r_probe, cfg.stl_scale, wp);
             Surf::write_cavity_surface(cfg.out_stl, wp.begin(), wp.end(), cfg.nSubdiv);
         }
     }

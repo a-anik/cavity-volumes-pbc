@@ -54,6 +54,7 @@ bool CavConfig::init(const char *run_control_file)
     cfg >> out_vol;
     cfg >> out_stl;
     cfg >> nSubdiv;
+    cfg >> stl_scale;
 
     // Initialize log streams (tee to file and screen)
     if (out_inf_ofstream.good())
@@ -102,6 +103,7 @@ bool CavConfig::init(const char *run_control_file)
     out_inf << "R scale factor : " << r_scale << std::endl;
     out_inf << "Rprobe : " << r_probe << std::endl;
     out_inf << "Subdivision depth : " << nSubdiv << std::endl;
+    out_inf << "STL scale factor : " << stl_scale << std::endl;
 
     // Select and initialize trajectory reader
     switch (file_format) {

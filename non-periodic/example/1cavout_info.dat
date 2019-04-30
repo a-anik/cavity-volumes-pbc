@@ -6,6 +6,7 @@ r[0] ... r[4571] : 1.2 ... 1.2
 R scale factor : 0.1
 Rprobe : 0.14
 Subdivision depth : 2
+STL scale factor : 10
 Run control file : cavity_volumes_fin.inp
 
 Number of input atoms : 4571
@@ -375,4 +376,4 @@ voids surf atom sum : 0.8472318487328
 voids total volume  : 0.021377041839028
 
 Processed 10 (of 10) configurations.
-Time: 0.571312 sec.
+Time: 0.575588 sec.

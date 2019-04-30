@@ -16,3 +16,4 @@ DhaAWT.rad - file with atomic radii
 ##########################################################################
 !5cavout_3dmesh.stl - file for writing 3D graphics mesh of cavities
 2 - 3D surface subdivision parameter
+10.0 - output coordinates scale factor (e.g., nm to angstrom)
