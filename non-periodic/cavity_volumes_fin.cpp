@@ -130,7 +130,6 @@ double cell_void_volume(Cell_handle c, double &out_surf, Array_double_4 &out_ato
 }
 
 
-
 // Constructs regular triangulation of weighted points.
 // Builds graph of cells with voids. Finds connected components of this graph (voids as clusters of cells).
 // For each component calculates total void volume and area.
@@ -274,13 +273,6 @@ void scale_cavity_atoms(const std::set<int> &cav_atoms, const CavConfig::Atoms_c
 
         Array_double_3 x = in_atoms[atom_id];
         Weight weight = CGAL::square((in_radii[atom_id] * r_scale + r_probe)*ANGS_PER_NM);
-#ifdef CORRECT_PBC
-        const Array_double_3 &x0 = in_atoms[*cav_atoms.begin()]; // cluster around first atom
-        for (int k = 0; k < 3; k++) {
-            double dx = x[k] - x0[k];
-            x[k] = x[k] - floor(dx / box[k] + 0.5) * box[k];
-        }
-#endif
 
         const Point corrected_p(x[0]*ANGS_PER_NM, x[1]*ANGS_PER_NM, x[2]*ANGS_PER_NM);
         out_points.push_back(Weighted_point(corrected_p, weight));
@@ -323,7 +315,7 @@ bool process_conf(CavConfig &cfg)
     long double total_void_volume = 0.0L;
     long double total_void_surface = 0.0L;
     long double total_void_surface_from_atoms = std::accumulate(res.atom_surf.begin(), res.atom_surf.end(), 0.0L);  // for check
-    for (const auto &v: res.voids) {        
+    for (const auto &v: res.voids) {
         total_void_volume += v.volume;
         total_void_surface += v.surface;
     }

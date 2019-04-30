@@ -1,10 +1,9 @@
-############# fin_cavity_volumes config v4  ##############################
+############# cavity_volumes_fin config v4  ##############################
 DhaAWT_traj.xtc - input trajectory file with coordinates
 1 10 1  - first / last / step - cycle over configurations
 DhaAWT.rad - file with atomic radii
 ##########################################################################
 0 - trajecory file format selector (0: Gromacs xtc, gro, g96, 1: text)
-0 - do PBC correction for molecule (0/1)
 ##########################################################################
 0.1 - input radii scale factor (final R = scale * Ri + Rprobe)
 0.14 - probe radius

@@ -45,7 +45,6 @@ bool CavConfig::init(const char *run_control_file)
     cfg >> ts_first >> ts_last >> ts_step;
     cfg >> r_fname;
     cfg >> file_format;
-    cfg >> do_pbc;
     cfg >> r_scale;
     cfg >> r_probe;
 
