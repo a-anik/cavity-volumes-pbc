@@ -1,9 +1,9 @@
 cavity-volumes-pbc
 ==================
 
-This program calculates volume and area of cavities available for a given probe inside molecular dynamics models with periodic boundary conditions.
+This program calculates volume and surface area of cavities available for a given probe inside molecular dynamics models with periodic boundary conditions.
 
-- fast analytical volume and surface computation for Solvent-Accessible voids 
+- fast analytical volume and surface computation for solvent-accessible voids 
 - uses weighted Voronoi (power) diagram / regular triangulation, works with atoms of different radii
 - input from GROMACS trajectory or simple text file
 - optional 3D mesh output for visualization of voids, STL format viewable in VMD (experimental)
@@ -36,6 +36,9 @@ Known bugs
 - fails on very small and sparse configurations where periodic regular triangulation can't be built
 - optional/experimental 3D mesh output works only for small isolated cavities
 
+TODO
+----
+Switch to CGAL's native implementation of periodic regular triangulations ([CGAL::Periodic_3_regular_triangulation_3](https://doc.cgal.org/latest/Periodic_3_triangulation_3)) available since CGAL 4.11.
 
 Citation
 --------
