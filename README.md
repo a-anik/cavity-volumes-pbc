@@ -24,6 +24,7 @@ You will need [CGAL][1], [Boost][2] and [CMake][3] to build this software.
     $ mkdir build
     $ cd build
     $ cmake ..
+    $ make
 
 Usage
 -----
